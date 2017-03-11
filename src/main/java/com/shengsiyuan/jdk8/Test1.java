@@ -1,5 +1,7 @@
 package com.shengsiyuan.jdk8;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
@@ -40,7 +42,20 @@ public class Test1 {
         });
 
         System.out.println("-----------------------");
-        // method references方法引用创建函数式接口的对象（）
+        // methodreference references方法引用创建函数式接口的对象（）
         list.forEach(System.out::println);
+
+        System.out.println(list.indexOf(8));
+        Test1 test1 = new Test1();
+
+        int test = 2;
+        test1.test(test);
+        System.out.println("-----------------------");
+        System.out.println(test);
+
+    }
+
+    public void test(int test) {
+        test = 1;
     }
 }
