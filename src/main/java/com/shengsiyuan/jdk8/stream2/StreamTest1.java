@@ -30,9 +30,13 @@ public class StreamTest1 {
 
         System.out.println("----------------");
 
+        //分数最低的学生
         students1.stream().collect(minBy(Comparator.comparingInt(Student::getScore))).ifPresent(System.out::println);
+        //分数最高的学生
         students1.stream().collect(maxBy(Comparator.comparingInt(Student::getScore))).ifPresent(System.out::println);
+        //分数平均值
         System.out.println(students1.stream().collect(averagingInt(Student::getScore)).doubleValue());
+        //分数总和
         System.out.println(students1.stream().collect(summingInt(Student::getScore)));
         IntSummaryStatistics intSummaryStatistics = students1.stream().collect(summarizingInt(Student::getScore));
         System.out.println(intSummaryStatistics);
